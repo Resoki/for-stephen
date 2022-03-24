@@ -22,7 +22,6 @@ module.exports = {
 
       for(let i = 0; i < members.length; i++){
           const member = message.guild.members.cache.get(members[i]);
-          
           member.kick().then(()=> {
             const successKick = new MessageEmbed().setDescription(`Successfully kicked ${member.user.username}`).setColor('GREEN');
             message.channel.send({embeds: [successKick]})

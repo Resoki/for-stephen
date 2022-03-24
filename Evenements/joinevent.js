@@ -12,9 +12,11 @@ module.exports = {
         const test = () => {
             if(member.roles.cache.has(global.roleKick))
                 member.kick().catch(()=>console.log(`Une erreur a eu lieu ${err}`))
-                console.log(`${member.user.username} a été kick !`)
+                console.log(`${member.user.username} a été kick au bout des 10 minutes!`)
+                const channel = member.guild.channels.cache.find(channel => channel.id === global.channelJoin);
+                channel.send(`${member.user.username} a été kick au bout des 10 minutes!`)
             }
-        setTimeout(()=> test(), 1000*600) // 10 minutes > 600.000 millisecondes
+        setTimeout(()=> test(), 6600) // 10 minutes > 600.000 millisecondes
   
     } 
     catch(err) {
