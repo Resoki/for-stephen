@@ -25,6 +25,9 @@ module.exports = {
           member.kick().then(()=> {
             const successKick = new MessageEmbed().setDescription(`${member.user.username} a été kick`).setColor('GREEN');
             message.channel.send({embeds: [successKick]})
+          }).catch(()=> {
+            const errorKick = new MessageEmbed().setDescription(`Une erreur a eu lieu en tentant de kick ${member.user.username} ! ❌`).setColor('RED');
+            channel.send({embeds: [errorKick]})
           })
       }
       console.log(members)
@@ -32,8 +35,6 @@ module.exports = {
     }
     catch(err) {
         message.channel.send(`Une erreur a eu lieu \n ${err}`)
-        const errorKick = new MessageEmbed().setDescription(`Une erreur a eu lieu en tentant de kick ${member.user.username} ! ❌`).setColor('RED');
-        channel.send({embeds: [errorKick]})
     }
   },
 };
