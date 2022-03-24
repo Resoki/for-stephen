@@ -1,11 +1,12 @@
 const { Client, Collection, Intents } = require('discord.js');
 const fs = require('fs');
+const { config } = require('process');
 const global = require('./Config/global.json')
 
 const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGE_REACTIONS] })
 bot.commands = new Collection()
 
-const { token, prefix } = require('./Config/global.json')
+const { token } = require('./Config/global.json')
 
 console.log(`Chargement du dossier Commandes`)
 console.log(``)
@@ -53,4 +54,4 @@ bot.once('ready', () => {
   console.log(`Logged in as ${bot.user.username}`)
 })
 
-bot.login(process.env.DJS_TOKEN)
+bot.login(process.env.DJS_TOKEN || token)
