@@ -11,7 +11,9 @@ module.exports = {
 
         //Si luser a encore le role après 10 min
         const test = () => {
+            console.log('1')
             if(member.roles.cache.has(global.roleKick)){
+                console.log('2')
                 member.kick()
                 console.log(`${member.user.username} a été kick au bout des 10 minutes! ✅`)
                
