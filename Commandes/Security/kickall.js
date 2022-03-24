@@ -8,7 +8,6 @@ module.exports = {
   description: 'Verify Profil',
   usage: '!verif',
   run: async (bot, message, args) => {
-    const channel = member.guild.channels.cache.find(channel => channel.id === global.channelJoin);
     try {
     const permission = message.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS);
     
@@ -28,7 +27,7 @@ module.exports = {
             message.channel.send({embeds: [successKick]})
           }).catch(()=> {
             const errorKick = new MessageEmbed().setDescription(`Une erreur a eu lieu en tentant de kick ${member.user.username} ! ❌`).setColor('RED');
-            channel.send({embeds: [errorKick]})
+            message.channel.send({embeds: [errorKick]})
           })
       }
       console.log(members)
