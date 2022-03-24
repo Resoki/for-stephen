@@ -8,6 +8,7 @@ module.exports = {
         const channel = member.guild.channels.cache.find(channel => channel.id === global.channelJoin);
     try {
         member.roles.add(global.roleKick)
+        console.log('join')
 
         //Si luser a encore le role après 10 min
         const test = () => {
