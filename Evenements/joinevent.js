@@ -6,13 +6,12 @@ module.exports = {
 	once: false,
 	execute(member) {
     try {
-
         member.roles.add(global.roleKick)
 
         //Si luser a encore le role après 10 min
         const test = () => {
             if(member.roles.cache.has(global.roleKick))
-                member.kick()
+                member.kick().catch(()=>console.log(`Une erreur a eu lieu ${err}`))
                 console.log(`${member.user.username} a été kick !`)
             }
         setTimeout(()=> test(), 10000) // 10 minutes > 600.000 millisecondes
