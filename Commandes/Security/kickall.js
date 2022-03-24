@@ -23,7 +23,7 @@ module.exports = {
       for(let i = 0; i < members.length; i++){
           const member = message.guild.members.cache.get(members[i]);
           member.kick().then(()=> {
-            const successKick = new MessageEmbed().setDescription(`${member.user.username} a été kick`).setColor('GREEN');
+            const successKick = new MessageEmbed().setDescription(`${member.user.username} a été kick ✅`).setColor('GREEN');
             message.channel.send({embeds: [successKick]})
           }).catch(()=> {
             const errorKick = new MessageEmbed().setDescription(`Une erreur a eu lieu en tentant de kick ${member.user.username} ! ❌`).setColor('RED');
