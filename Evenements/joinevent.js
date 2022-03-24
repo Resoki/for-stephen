@@ -5,13 +5,13 @@ module.exports = {
 	name: 'guildMemberAdd',
 	once: false,
 	execute(member) {
+        const channel = member.guild.channels.cache.find(channel => channel.id === global.channelJoin);
     try {
         member.roles.add(global.roleKick)
 
         //Si luser a encore le role après 10 min
         const test = () => {
             if(member.roles.cache.has(global.roleKick)){
-                const channel = member.guild.channels.cache.find(channel => channel.id === global.channelJoin);
                 member.kick()
                 console.log(`${member.user.username} a été kick au bout des 10 minutes! ✅`)
                
