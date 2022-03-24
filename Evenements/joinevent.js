@@ -14,7 +14,7 @@ module.exports = {
                 member.kick().catch(()=>console.log(`Une erreur a eu lieu ${err}`))
                 console.log(`${member.user.username} a été kick !`)
             }
-        setTimeout(()=> test(), 10000) // 10 minutes > 600.000 millisecondes
+        setTimeout(()=> test(), 1000*600) // 10 minutes > 600.000 millisecondes
   
     } 
     catch(err) {
