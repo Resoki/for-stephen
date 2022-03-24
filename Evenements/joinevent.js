@@ -22,8 +22,8 @@ module.exports = {
                 channel.send({embeds: [successKick]})
               
             }
-        setTimeout(()=> test(), 2000) // 10 minutes > 600.000 millisecondes
         }
+        setTimeout(()=> test(), 4000) // 10 minutes > 600.000 millisecondes
   
     } 
     catch(err) {
