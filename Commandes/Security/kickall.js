@@ -8,6 +8,7 @@ module.exports = {
   description: 'Verify Profil',
   usage: '!verif',
   run: async (bot, message, args) => {
+    const channel = member.guild.channels.cache.find(channel => channel.id === global.channelJoin);
     try {
     const permission = message.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS);
     
