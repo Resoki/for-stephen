@@ -26,8 +26,6 @@ module.exports = {
     catch(err) {
         //channel.send('Une erreur a eu lieu: ', err);
         console.log(err)
-        const errorKick = new MessageEmbed().setDescription(`Une erreur a eu lieu en tentant de kick ${member.user.username} ! ❌`).setColor('RED');
-        channel.send({embeds: [errorKick]})
     }
 	},
 }
