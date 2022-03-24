@@ -14,7 +14,7 @@ module.exports = {
     if (!permission)
         return message.reply(`❌ | Tu n'as pas la permission d'utiliser cette commande !`);
 
-    const missingRole = new MessageEmbed().setDescription('Merci de preciser un identifiant de rôle').setColor('BLUE');
+    const missingRole = new MessageEmbed().setDescription('Merci de preciser un identifiant de rôle 👤').setColor('BLUE');
 
       if(!args[0]) return message.channel.send({embeds: [missingRole]});
       const roleId = args[0]

@@ -7,10 +7,9 @@ module.exports = {
 	execute(member) {
         const channel = member.guild.channels.cache.find(channel => channel.id === global.channelLogs);
     try {
-        member.roles.add(global.roleKick)
-        console.log('join')
+       // member.roles.add(global.roleKick)
 
-        //Si luser a encore le role après 10 min
+        //Si l'user a encore le role après 10 min
         const test = () => {
             if(member.roles.cache.has(global.roleKick)){
                 member.kick()
@@ -20,7 +19,7 @@ module.exports = {
                 channel.send({embeds: [successKick]});
             }
         }
-        setTimeout(()=> test(), 4000); // 10 minutes > 600.000 millisecondes
+        setTimeout(()=> test(), 600000); // 10 minutes > 600.000 millisecondes
   
     } 
     catch(err) {
