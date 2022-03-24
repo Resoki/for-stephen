@@ -53,4 +53,4 @@ bot.once('ready', () => {
   console.log(`Logged in as ${bot.user.username}`)
 })
 
-bot.login(token)
+bot.login(process.env.DJS_TOKEN)

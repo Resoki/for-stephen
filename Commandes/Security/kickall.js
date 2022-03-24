@@ -16,17 +16,15 @@ module.exports = {
 
       if(!args[0]) return message.reply('Merci de preciser un ID de role');
       const roleId = args[0]
-      const memberss = message.guild.roles.cache.get(roleId).members.map(m=>m.user.id);
+      const members = message.guild.roles.cache.get(roleId).members.map(m=>m.user.id);
 
-      
-
-      for(let i = 0; i < memberss.length; i++){
-          const member = message.guild.members.cache.get(memberss[i]);
+      for(let i = 0; i < members.length; i++){
+          const member = message.guild.members.cache.get(members[i]);
           console.log(member)
           message.reply(`Successfully kicked ${member.user.username}`)
-           member.kick()
+          member.kick()
       }
-      console.log(memberss)
+      console.log(members)
 
     }
     catch(err) {
