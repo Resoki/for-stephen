@@ -6,8 +6,7 @@ module.exports = {
 	once: true,
 	execute(bot, member) {
     //Joue à >
-    bot.user.setActivity(global.activityBot)
-    bot.user.setStatus(global.statusBot == true ? 'online' : 'dnd')
-    
+    bot.user.setActivity(global.activityBot);
+    bot.user.setStatus(global.statusBot == true ? 'online' : 'dnd');
 	},
 }
