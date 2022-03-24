@@ -3,6 +3,8 @@
   "prefix": "!",
   "roleKick": "952917169665114123",
   "channelLogs": "952192901318836304",
-  "activityBot": "securiser le serveur"
+  "activityBot": "securiser le serveur",
+  "statusBot":  "true"
+
 
 }
